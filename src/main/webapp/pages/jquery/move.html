@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery动画</title>
+<script src="../../lib/jslib/jquery-3.2.1.js"></script>
+</head>
+<style>
+div{
+	border: 1px solid red;
+}
+</style>
+<body>
+	隐藏，显示<br>hide()  show()
+	淡入，淡出<br> fadeIn() fadeOut() fadeTo() 改变透明度
+	滑动<br> slideDown() slideUp()
+	动画，停止动画<br>  jQ允许自定义动画  animate()  停止动画，效果。。用stop()
+	callback<br> 在动画完成后执行
+	链<br>
+	
+	
+	<hr>
+	<br>
+	<p>测试测测试测试</p>
+	<span>点击隐藏该段落</span>
+	
+	<p></p>
+	<div>
+		测试淡入淡出<br>
+		测试淡入淡出<br>
+		测试淡入淡出<br>
+		测试淡入淡出<br>
+	</div>
+	<span>点击测试淡入淡出</span>
+	
+	
+	<div>
+		测试滑动<br>
+		测试滑动<br>
+		测试滑动<br>
+		测试滑动<br>
+	</div>
+	<span>点击测试滑动</span>
+	
+	<br>
+	动画测试
+	<br>
+	<div style="float: left">测试动画动画</div><br>
+	<span>点击测试动画</span>
+	
+	
+	<script>
+		$(function(){
+			$('span:eq(0)').click(function(){
+				$('p').toggle('slow',function(){
+					//alert('i am hide!');
+				});
+			});
+			
+			$('span:eq(1)').click(function(){
+				$('div:first').fadeToggle();
+			})
+			
+			$('span').eq(2).click(function(){
+				$('div:eq(1)').slideUp();
+			})
+			
+			$('span').eq(3).click(function(){
+				$('div:last').animate({'margin-left':'500px'},'slow');
+			})
+			
+			//链式操作-----------
+			$("div:eq(0)").css("color","red").slideUp(2000).slideDown(2000);
+			
+		})
+	</script>
+	
+	
+</body>
+</html>

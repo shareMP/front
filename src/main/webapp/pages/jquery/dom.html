@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM操作</title>
+<script src="../../lib/jslib/jquery-3.2.1.js"></script>
+</head>
+<body>
+	
+	<h3>JQuery提供了一些操作DOM的方法。</h3>
+	主要包括三个
+	<ul>
+		<Li>text() 返回或者设置所选元素的文本</Li>
+		<Li>html() 返回或者设置所选元素的内容(包括html标记)</Li>
+		<Li>val() 返回或者设置表单字段的值</Li>
+		<Li>获取属性 - attr()</Li>
+		
+		
+		
+		
+	</ul>
+	<br>
+	例子：
+	<span style="color:red">测试<b>测试</b>测试<a href='http:www.baidu.com'>测试</a></span>
+	<span>2222222222222222</span>
+	
+	
+	
+	---------------------<br><hr>
+		还有一些添加，删除dom元素的方法
+	主要是这几个，其他的可查api
+	append preappend after before 
+	删除元素：remove移除所选元素以及子元素          
+	      empty:移除所选元素内的元素
+	
+	<br><br>
+	
+	<div class="test" style="border: 1px dotted #000">
+		<ul>
+			<li>测试1</li>
+			<li>测试2</li>
+			<li>测试3</li>
+		</ul>
+	</div>
+	
+	测试追加元素
+	<div style="border: 1px solid #000">
+		<span id='append'>在后面后追加一个元素</span><br>
+		<span id='prepend'>前面前一个元素</span><br>
+		<span id='after'>在所选元素之外向后追加一个元素</span><br>
+		<span id='before'>在所选元素之外向前追加一个元素</span><br>
+	</div>
+	测试删除元素
+	<div style="border: 1px solid #000">
+		<span id='remove'>remove</span><br>
+		<span id='empty'>empty</span><br>
+		
+	</div>
+	
+	<script>
+		$(function(){
+			$('span:eq(1)').click(function(){
+				/* alert('text:'+$(this).text());
+				alert('html:'+$(this).html());
+				alert('val:'+$(this).children('a').attr('href')); */
+			
+				
+				//设置html,可带有样式
+				//$(this).html('<p style="color:green">测试测测试从</p>');
+				
+				//设置属性
+				$('span:eq(0)').children('a').attr('href','http://www.google.com').css('color','yellow');
+			});
+			
+			/* $('.test').click(function(){
+				//append
+				for(var i=4;i<7;i++){
+					$('.test li:last').append('<li>测试'+i+'</li>')
+				}
+			}); */
+			
+			//追加元素
+			$('#append').click(function(){
+				$('.test ul').append('<li>测试追加!</li>')
+			})
+			
+			$('#prepend').click(function(){
+				$('.test ul').prepend('<li>测试在前面追加!</li>')
+			})
+			
+			$('#after').click(function(){
+				$('.test ul').after('<li>测试在所选元素之外向后追加一个元素!</li>')
+			})
+			
+			$('#before').click(function(){
+				$('.test ul').before('<li>测试在所选元素之外向前追加一个元素!</li>')
+			})
+			
+			//删除元素
+			$('#remove').click(function(){
+				$('.test').remove();
+			})
+			$('#empty').click(function(){
+				$('.test').empty();
+			})
+			
+			
+			
+		})
+	</script>
+	
+</body>
+</html>

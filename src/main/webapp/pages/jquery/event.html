@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery事件</title>
+<script src="../../lib/jslib/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<h3>页面对不同的访问者的操作的响应</h3>
+	<h4>鼠标事件</h4>
+	click,dbclick,
+	<h4>键盘事件</h4>
+	<h4>文档窗口事件</h4>
+	<br>
+	<br> ----
+	<p>常见 DOM 事件：</p>
+	<table class="reference">
+		<tbody>
+			<tr>
+				<th style="width: 23%">鼠标事件</th>
+				<th style="width: 25%">键盘事件</th>
+				<th style="width: 22%">表单事件</th>
+				<th>文档/窗口事件</th>
+			</tr>
+			<tr>
+				<td><a href="/jquery/event-click.html" rel="noopener"
+					target="_blank">click</a></td>
+				<td><a href="/jquery/event-keypress.html" rel="noopener"
+					target="_blank">keypress</a></td>
+				<td><a href="/jquery/event-submit.html" rel="noopener"
+					target="_blank">submit</a></td>
+				<td><a href="/jquery/event-load.html" rel="noopener"
+					target="_blank">load</a></td>
+			</tr>
+			<tr>
+				<td><a href="/jquery/event-dblclick.html" rel="noopener"
+					target="_blank">dblclick</a></td>
+				<td><a href="/jquery/event-keydown.html" rel="noopener"
+					target="_blank">keydown</a></td>
+				<td><a href="/jquery/event-change.html" rel="noopener"
+					target="_blank">change</a></td>
+				<td><a href="/jquery/event-resize.html" rel="noopener"
+					target="_blank">resize</a></td>
+			</tr>
+			<tr>
+				<td><a href="/jquery/event-mouseenter.html" rel="noopener"
+					target="_blank">mouseenter</a></td>
+				<td><a href="/jquery/event-keyup.html" rel="noopener"
+					target="_blank">keyup</a></td>
+				<td><a href="/jquery/event-focus.html" rel="noopener"
+					target="_blank">focus</a></td>
+				<td><a href="/jquery/event-scroll.html" rel="noopener"
+					target="_blank">scroll</a></td>
+			</tr>
+			<tr>
+				<td><a href="/jquery/event-mouseleave.html" rel="noopener"
+					target="_blank">mouseleave</a></td>
+				<td>&nbsp;</td>
+				<td><a href="/jquery/event-blur.html" rel="noopener"
+					target="_blank">blur</a></td>
+				<td><a href="/jquery/event-unload.html" rel="noopener"
+					target="_blank">unload</a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br><br>
+	
+	<P onclick="ddd()">测试</P>
+
+</body>
+	<script type="text/javascript">
+		$('p').click();//触发事件
+	 	function ddd(){
+	 		alert('111');
+	 	}
+	</script>
+</html>

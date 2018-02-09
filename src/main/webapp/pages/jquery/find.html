@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>遍历</title>
+<script src="../../lib/jslib/jquery-3.2.1.js"></script>
+</head>
+<body>
+	通过对DOM树的操作
+	向上移动，向下一定，向左右移动来寻找指定的元素
+	
+	父元素：parent():直接父元素   parents():祖先元素  parentsUntil("")方法返回介于两个给定元素之间的所有祖先元素。<br>
+	后代：children()只会向下找一层     find()：找所有后代
+	
+	<br>同胞元素，暂时不看了。
+	<br>过滤:first(), last() 和 eq()  filter() 和 not() 允许您选取匹配或不匹配某项指定标准的元素。
+	
+	<div>
+		<ul>
+			<li class='test'>测试测试<a href='xxx'>cccc</a></li>
+			<li>测试测试</li>
+			<li>测试测试</li>
+		</ul>
+	</div>
+	
+	<div>
+		<ul>
+			<li>测试测试</li>
+			<li>测试测试</li>
+			<li>测试测试</li>
+		</ul>
+	</div>
+	
+	
+		<script type="text/javascript">
+		
+		$(function(){
+			//alert($('.test').parents().length);
+			
+			alert($('ul:eq(0)').find('a').attr('href'));
+			
+		})
+		
+		</script>
+</body>
+</html>

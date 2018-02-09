@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS操作</title>
+<script src="../../lib/jslib/jquery-3.2.1.js"></script>
+</head>
+<body>
+
+	<p>测试测试测试测试测试</p>
+	
+	<h3>jQ对css的操作 主要包括新增，删除，(新增删除替换),和css()</h3>
+
+		这里看下css()方法
+		<br>
+		css():返回所选元素的css
+		css("propertyname");获取指定的css属性值
+		
+		
+		
+		<script type="text/javascript">
+		
+		$(function(){
+			//设置单个css的属性，
+			$('p').css('color','red');
+			//多个
+			$('p').css({'color':'blue','font-weight':'bold'});
+		})
+		
+		</script>
+	
+</body>
+</html>

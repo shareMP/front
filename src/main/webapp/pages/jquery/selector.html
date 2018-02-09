@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery选择器</title>
+<script src="../../lib/jslib/jquery-3.2.1.js"></script>
+</head>
+<style>
+.test1{
+	color: red;
+}
+</style>
+<body>
+	<!-- 
+		元素选择器
+		$('p') 选择所有的p元素
+		id选择器
+		$('#idname')
+		类选择器
+		$('.test')
+	 -->
+	 <p>元素选择器p1</p>
+	 <p>元素选择器p2</p>
+	 <div style="width: 100px;height: 100px;border: 1px solid #eee" id='div1'></div>
+	 <span class="test1">Span</span>
+	 <span class="test1">Span2</span><br><br>
+	 
+	 ---------------华丽的分割线-------------------<br>
+	 祖先，后代选择器,用空格分割 
+	<div>
+		<ul style="list-style: none">
+			<li><a href="#">Apple</a></li>
+			<li><a href="#">Orangle</a></li>
+			<li><a href="#">Banana</a></li>
+		</ul>
+	</div>
+	<br><br>
+	parent > child
+	-------------------------
+	在给定的父元素下匹配所有的子元素
+	<span>后代和子选择器的区别：
+		子选择器只向下一层
+	</span>
+	<!--  <div>
+		
+			<li><a href="#">Apple</a></li>
+			<li><a href="#">Orangle</a></li>
+			<li><a href="#">Banana</a></li>
+
+	</div>  -->
+	<div id="father">
+		<div>
+			<p>孙子</p>
+		</div>
+		<p>儿子</p>
+	</div>
+	 
+</body>
+	<script type="text/javascript">
+		$(function(){
+			//元素选择器
+			/* $('p').on('click',function(){
+				$(this).hide();
+			}); */
+			
+			//id选择器
+			$('#div1').on('click',function(){
+				$(this).hide();
+			});
+			
+			//类选择器
+			$('.test1').on('click',function(){
+				$('.test1').css('color','blue');
+			})
+			
+			//获取所有元素
+			/* $('*').click(function(){
+				$(this).hide();
+			}) */
+			
+			//获取ul下的所有a元素
+			$('ul a').on('click',function(){
+				var href = $(this).attr('href');
+				$(this).attr('href','http://www.baidu.com');
+			})
+			
+			
+			//获取div下面的a
+			/* $('div a').on('click',function(){
+				$(this).css('color','red');
+			}) */
+			$('#father > p').on('click',function(){
+				$(this).css('color','red');
+			})
+			
+			
+			
+		})
+	</script>
+</html>
